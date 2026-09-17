@@ -10,19 +10,12 @@
   <main class="card" id="card">
     <img class="card__photo" id="photo" src="" alt="Photo de profil" />
     <h1 class="card__name" id="name"></h1>
-    <p class="card__title" id="title"></p>
-    <p class="card__bio" id="bio"></p>
 
-    <div class="card__actions">
-      <a class="btn btn--primary" id="portfolio-btn" href="#" target="_blank" rel="noopener">
-        🌐 Voir mon portfolio
-      </a>
-      <a class="btn btn--secondary" id="cv-btn" href="#" download>
-        ⬇️ Télécharger mon CV
-      </a>
-    </div>
+    <a class="btn btn--primary" id="cv-btn" href="#" download>
+      ⬇️ Télécharger mon CV
+    </a>
 
-    <div class="card__socials" id="socials"></div>
+    <div class="link-list" id="links"></div>
   </main>
 
   <script src="config.js"></script>
@@ -31,27 +24,22 @@
 
     document.getElementById("photo").src = cfg.photo;
     document.getElementById("name").textContent = cfg.name;
-    document.getElementById("title").textContent = cfg.title;
-    document.getElementById("bio").textContent = cfg.bio;
-
-    const portfolioBtn = document.getElementById("portfolio-btn");
-    portfolioBtn.href = cfg.portfolioUrl;
 
     const cvBtn = document.getElementById("cv-btn");
     cvBtn.href = cfg.cv;
     cvBtn.download = cfg.cvFileName || "cv.pdf";
 
-    const socials = document.getElementById("socials");
-    (cfg.socials || []).forEach((s) => {
+    const links = document.getElementById("links");
+    (cfg.links || []).forEach((link) => {
       const a = document.createElement("a");
-      a.href = s.href;
-      a.title = s.label;
-      a.textContent = s.icon;
-      if (s.href.startsWith("http")) {
+      a.className = "link-item";
+      a.href = link.href;
+      if (link.href.startsWith("http")) {
         a.target = "_blank";
         a.rel = "noopener";
       }
-      socials.appendChild(a);
+      a.innerHTML = `<span class="link-item__icon">${link.icon}</span><span class="link-item__label">${link.label}</span>`;
+      links.appendChild(a);
     });
   </script>
 </body>

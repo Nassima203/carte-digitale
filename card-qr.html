@@ -12,13 +12,12 @@
     <main class="card">
       <img class="card__photo" id="photo" src="" alt="Photo de profil" />
       <h1 class="card__name" id="name"></h1>
-      <p class="card__title" id="title"></p>
     </main>
 
     <div class="qr-box" id="qrcode"></div>
     <p class="qr-hint">
-      Scannez ce QR code pour accéder à la carte digitale : le portfolio et
-      le téléchargement du CV.
+      Scannez ce QR code pour accéder à mes liens (portfolio, LinkedIn,
+      GitHub, Gmail) et télécharger mon CV.
     </p>
   </div>
 
@@ -28,7 +27,6 @@
 
     document.getElementById("photo").src = cfg.photo;
     document.getElementById("name").textContent = cfg.name;
-    document.getElementById("title").textContent = cfg.title;
 
     new QRCode(document.getElementById("qrcode"), {
       text: cfg.cardUrl,
