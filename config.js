@@ -11,6 +11,9 @@ window.CARD_CONFIG = {
   cv: "assets/cv.pdf",
   cvFileName: "CV-Nassima-Adli.pdf",
 
+  // Lien vers le portfolio (utilisé aussi par le logo en haut de page).
+  portfolioUrl: "https://portfolio-nassimaadli.vercel.app",
+
   // URL publique de cette page une fois déployée (ex: GitHub Pages,
   // Netlify...). Utilisée pour générer le QR code dans card-qr.html.
   // À mettre à jour après déploiement.
@@ -19,7 +22,7 @@ window.CARD_CONFIG = {
   // Liens affichés façon Linktree, dans l'ordre.
   links: [
     { label: "Portfolio", href: "https://portfolio-nassimaadli.vercel.app", icon: "🌐" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/nassima-adli-60a78135b", icon: "💼" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/nassima-adli-60a78135b/", icon: "💼" },
     { label: "GitHub", href: "https://github.com/Nassima203", icon: "🐙" },
     { label: "Gmail", href: "mailto:nassimaadli777@gmail.com", icon: "✉️" }
   ]

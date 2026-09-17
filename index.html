@@ -7,10 +7,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="brand">
-    <span class="brand__mark">✳</span>
-    <span id="brand-name"></span>
-  </div>
+  <a class="brand" id="brand" href="#" target="_blank" rel="noopener">
+    <span class="brand__mark">✳</span><span id="brand-name"></span>
+  </a>
 
   <main class="card" id="card">
     <img class="card__photo" id="photo" src="" alt="Photo de profil" />
@@ -31,9 +30,11 @@
     document.getElementById("photo").src = cfg.photo;
     document.getElementById("name").textContent = cfg.name;
 
+    const brand = document.getElementById("brand");
+    brand.href = cfg.portfolioUrl || "#";
     const [firstName, ...rest] = cfg.name.split(" ");
     document.getElementById("brand-name").innerHTML =
-      `<span class="brand__name">${firstName}</span> <span class="brand__dot">.</span> <span class="brand__last">${rest.join(" ")}</span>`;
+      `${firstName}<span class="brand__dot">.</span>${rest.join(" ")}`;
 
     const cvBtn = document.getElementById("cv-btn");
     cvBtn.href = cfg.cv;
@@ -42,13 +43,13 @@
     const links = document.getElementById("links");
     (cfg.links || []).forEach((link) => {
       const a = document.createElement("a");
-      a.className = "link-item";
+      a.className = "btn link-item";
       a.href = link.href;
       if (link.href.startsWith("http")) {
         a.target = "_blank";
         a.rel = "noopener";
       }
-      a.innerHTML = `<span class="link-item__icon">${link.icon}</span><span class="link-item__label">${link.label}</span>`;
+      a.innerHTML = `<span class="link-item__icon">${link.icon}</span><span>${link.label}</span>`;
       links.appendChild(a);
     });
   </script>
