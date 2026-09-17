@@ -8,6 +8,11 @@
   <script src="vendor/qrcode.min.js"></script>
 </head>
 <body>
+  <div class="brand">
+    <span class="brand__mark">✳</span>
+    <span id="brand-name"></span>
+  </div>
+
   <div class="qr-page">
     <main class="card">
       <img class="card__photo" id="photo" src="" alt="Photo de profil" />
@@ -28,11 +33,15 @@
     document.getElementById("photo").src = cfg.photo;
     document.getElementById("name").textContent = cfg.name;
 
+    const [firstName, ...rest] = cfg.name.split(" ");
+    document.getElementById("brand-name").innerHTML =
+      `<span class="brand__name">${firstName}</span> <span class="brand__dot">.</span> <span class="brand__last">${rest.join(" ")}</span>`;
+
     new QRCode(document.getElementById("qrcode"), {
       text: cfg.cardUrl,
       width: 200,
       height: 200,
-      colorDark: "#1f2033",
+      colorDark: "#241c16",
       colorLight: "#ffffff",
       correctLevel: QRCode.CorrectLevel.H,
     });

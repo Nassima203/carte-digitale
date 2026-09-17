@@ -14,7 +14,9 @@ Gmail) et un bouton pour télécharger votre CV.
   C'est le seul fichier à modifier pour personnaliser la page.
 - `assets/` — votre photo (`photo.jpg`) et votre CV (`cv.pdf`), déjà en
   place.
-- `styles.css` — le style visuel (dégradé violet, cartes arrondies).
+- `styles.css` — le style visuel : même identité que le portfolio (fond
+  crème, formes organiques violet/rose, cadre noir épais, accents vert
+  anis, typo Fraunces/Space Mono).
 - `vendor/qrcode.min.js` — librairie de génération de QR code (embarquée
   localement, aucune dépendance externe/CDN requise).
 

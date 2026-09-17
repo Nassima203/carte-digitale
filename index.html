@@ -7,12 +7,17 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="brand">
+    <span class="brand__mark">✳</span>
+    <span id="brand-name"></span>
+  </div>
+
   <main class="card" id="card">
     <img class="card__photo" id="photo" src="" alt="Photo de profil" />
     <h1 class="card__name" id="name"></h1>
 
     <a class="btn btn--primary" id="cv-btn" href="#" download>
-      ⬇️ Télécharger mon CV
+      ⬇ Télécharger mon CV
     </a>
 
     <div class="link-list" id="links"></div>
@@ -24,6 +29,10 @@
 
     document.getElementById("photo").src = cfg.photo;
     document.getElementById("name").textContent = cfg.name;
+
+    const [firstName, ...rest] = cfg.name.split(" ");
+    document.getElementById("brand-name").innerHTML =
+      `<span class="brand__name">${firstName}</span> <span class="brand__dot">.</span> <span class="brand__last">${rest.join(" ")}</span>`;
 
     const cvBtn = document.getElementById("cv-btn");
     cvBtn.href = cfg.cv;
