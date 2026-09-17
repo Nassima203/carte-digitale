@@ -1,15 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap");
 
+/*
+  Palette extraite au pixel depuis une capture d'écran du portfolio
+  (portfolio-nassimaadli.vercel.app) pour reproduire la même DA :
+  fond crème, blobs pastel, encre presque noire, accents violet/vert.
+*/
 :root {
-  --bg: #f4efe2;
-  --ink: #241c16;
-  --muted: #5c564c;
-  --purple: #b7a8f2;
-  --purple-deep: #8f7aeb;
-  --pink: #f3b9cc;
-  --green: #c9ec86;
-  --green-deep: #9ecb3f;
-  --card-bg: #fbf8ef;
+  --bg: #f2eee3;
+  --card-bg: #fffdf7;
+  --ink: #1e1510;
+  --muted: #685a4d;
+  --blob-purple: #d7cff3;
+  --blob-pink: #f5d2e4;
+  --purple-text: #c6bbf2;
+  --purple-accent: #a590e8;
+  --green: #d4f089;
+  --green-deep: #52b537;
 }
 
 * {
@@ -37,22 +43,20 @@ body::after {
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  filter: blur(10px);
+  filter: blur(30px);
   z-index: 0;
 }
 
 body::before {
-  background: var(--purple);
+  background: var(--blob-purple);
   top: -80px;
   left: -100px;
-  opacity: 0.85;
 }
 
 body::after {
-  background: var(--pink);
+  background: var(--blob-pink);
   bottom: -100px;
   right: -110px;
-  opacity: 0.85;
 }
 
 .brand {
@@ -62,9 +66,9 @@ body::after {
   align-items: center;
   gap: 10px;
   margin-bottom: 28px;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Roboto Slab", Georgia, serif;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .brand__mark {
@@ -72,7 +76,6 @@ body::after {
   height: 30px;
   border-radius: 9px;
   background: var(--green-deep);
-  border: 2px solid var(--ink);
   color: #fff;
   display: flex;
   align-items: center;
@@ -81,15 +84,12 @@ body::after {
   line-height: 1;
 }
 
-.brand__name {
-  color: var(--purple-deep);
+.brand__name,
+.brand__last {
+  color: var(--purple-text);
 }
 
 .brand__dot {
-  color: var(--green-deep);
-}
-
-.brand__last {
   color: var(--ink);
 }
 
@@ -115,11 +115,21 @@ body::after {
   background: #fff;
 }
 
+.card__label {
+  margin: 0 0 6px;
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple-accent);
+}
+
 .card__name {
   margin: 0 0 24px;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 26px;
-  font-weight: 700;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 28px;
+  font-weight: 800;
   color: var(--ink);
 }
 
@@ -144,18 +154,18 @@ body::after {
 .btn--primary {
   background: var(--green);
   color: var(--ink);
-  box-shadow: 6px 6px 0 var(--purple-deep);
+  box-shadow: 6px 6px 0 var(--purple-accent);
   margin-bottom: 26px;
 }
 
 .btn--primary:hover {
   transform: translate(3px, 3px);
-  box-shadow: 3px 3px 0 var(--purple-deep);
+  box-shadow: 3px 3px 0 var(--purple-accent);
 }
 
 .btn--primary:active {
   transform: translate(6px, 6px);
-  box-shadow: 0 0 0 var(--purple-deep);
+  box-shadow: 0 0 0 var(--purple-accent);
 }
 
 .link-list {
@@ -170,7 +180,7 @@ body::after {
   gap: 12px;
   padding: 14px 20px;
   border-radius: 999px;
-  background: #fff;
+  background: var(--card-bg);
   border: 3px solid var(--ink);
   text-decoration: none;
   color: var(--ink);
@@ -179,34 +189,18 @@ body::after {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  box-shadow: 5px 5px 0 var(--pink);
+  box-shadow: 5px 5px 0 var(--purple-accent);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
-}
-
-.link-item:nth-child(3n+2) {
-  box-shadow: 5px 5px 0 var(--purple);
-}
-
-.link-item:nth-child(3n+3) {
-  box-shadow: 5px 5px 0 var(--green);
 }
 
 .link-item:hover {
   transform: translate(2px, 2px);
-  box-shadow: 3px 3px 0 var(--pink);
-}
-
-.link-item:nth-child(3n+2):hover {
-  box-shadow: 3px 3px 0 var(--purple);
-}
-
-.link-item:nth-child(3n+3):hover {
-  box-shadow: 3px 3px 0 var(--green);
+  box-shadow: 3px 3px 0 var(--purple-accent);
 }
 
 .link-item:active {
   transform: translate(5px, 5px);
-  box-shadow: 0 0 0 currentColor;
+  box-shadow: 0 0 0 var(--purple-accent);
 }
 
 .link-item__icon {
@@ -228,7 +222,7 @@ body::after {
   padding: 18px;
   border-radius: 20px;
   border: 3px solid var(--ink);
-  box-shadow: 6px 6px 0 var(--green-deep);
+  box-shadow: 6px 6px 0 var(--purple-accent);
 }
 
 .qr-hint {
