@@ -8,7 +8,13 @@
 </head>
 <body>
   <a class="brand" id="brand" href="#" target="_blank" rel="noopener">
-    <span class="brand__mark">✳</span><span id="brand-name"></span>
+    <span class="brand__mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <line x1="12" y1="2" x2="12" y2="22" />
+        <line x1="3.5" y1="7" x2="20.5" y2="17" />
+        <line x1="20.5" y1="7" x2="3.5" y2="17" />
+      </svg>
+    </span><span id="brand-name"></span>
   </a>
 
   <main class="card" id="card">
@@ -17,7 +23,7 @@
     <h1 class="card__name" id="name"></h1>
 
     <a class="btn btn--primary" id="cv-btn" href="#" download>
-      ⬇ Télécharger mon CV
+      Télécharger mon CV
     </a>
 
     <div class="link-list" id="links"></div>
@@ -26,6 +32,7 @@
   <script src="config.js"></script>
   <script>
     const cfg = window.CARD_CONFIG;
+    const icons = window.CARD_ICONS || {};
 
     document.getElementById("photo").src = cfg.photo;
     document.getElementById("name").textContent = cfg.name;
@@ -49,7 +56,8 @@
         a.target = "_blank";
         a.rel = "noopener";
       }
-      a.innerHTML = `<span class="link-item__icon">${link.icon}</span><span>${link.label}</span>`;
+      const iconSvg = link.icon && icons[link.icon] ? `<span class="link-item__icon">${icons[link.icon]}</span>` : "";
+      a.innerHTML = `${iconSvg}<span>${link.label}</span>`;
       links.appendChild(a);
     });
   </script>
