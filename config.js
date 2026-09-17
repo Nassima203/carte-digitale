@@ -14,11 +14,6 @@ window.CARD_CONFIG = {
   // Lien vers le portfolio (utilisé aussi par le logo en haut de page).
   portfolioUrl: "https://portfolio-nassimaadli.vercel.app",
 
-  // URL publique de cette page une fois déployée (ex: GitHub Pages,
-  // Netlify...). Utilisée pour générer le QR code dans card-qr.html.
-  // À mettre à jour après déploiement.
-  cardUrl: "https://votre-nom.github.io/carte-digitale/",
-
   // Liens affichés façon Linktree, dans l'ordre. `icon` fait référence à
   // une clé de window.CARD_ICONS (voir plus bas) ; laissez-le vide pour
   // un lien sans icône.
