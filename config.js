@@ -3,29 +3,27 @@
 // modification de code n'est nécessaire).
 window.CARD_CONFIG = {
   name: "Nassima Adli",
-  title: "Développeuse Web",
-  bio: "Je conçois des expériences web modernes, accessibles et soignées.",
+  title: "Développeuse Web Fullstack — Alternance",
+  bio: "Développeuse web fullstack polyvalente : interfaces front avancées (React, Three.js/WebGL), traitement de données en Python et automatisation no-code. À la recherche d'une alternance.",
 
-  // Photo affichée sur la carte. Remplacez assets/photo.svg par votre
-  // propre photo (ex: assets/photo.jpg) et mettez à jour le chemin ici.
-  photo: "assets/photo.svg",
+  // Photo affichée sur la carte.
+  photo: "assets/photo.jpg",
 
-  // CV téléchargeable. Remplacez assets/cv.pdf par votre vrai CV
-  // (gardez le même nom de fichier, ou changez-le ci-dessous).
+  // CV téléchargeable (généré à partir du CV fourni).
   cv: "assets/cv.pdf",
   cvFileName: "CV-Nassima-Adli.pdf",
 
-  // Lien vers votre portfolio en ligne.
-  portfolioUrl: "https://votre-portfolio.example.com",
+  // Lien vers le portfolio en ligne.
+  portfolioUrl: "https://portfolio-nassimaadli.vercel.app",
 
   // URL publique de cette carte digitale une fois déployée
   // (ex: GitHub Pages, Netlify...). Utilisée pour générer le QR code
-  // dans card-qr.html.
+  // dans card-qr.html. À mettre à jour après déploiement.
   cardUrl: "https://votre-nom.github.io/carte-digitale/",
 
   socials: [
     { label: "Email", href: "mailto:nassimaadli777@gmail.com", icon: "✉️" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/votre-profil", icon: "💼" },
-    { label: "GitHub", href: "https://github.com/votre-utilisateur", icon: "🐙" }
+    { label: "LinkedIn", href: "https://linkedin.com/in/nassima-adli-60a78135b", icon: "💼" },
+    { label: "GitHub", href: "https://github.com/Nassima203", icon: "🐙" }
   ]
 };

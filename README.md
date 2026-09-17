@@ -14,24 +14,26 @@ votre photo).
 - `config.js` — toutes vos informations personnelles (nom, titre, bio,
   photo, CV, lien du portfolio, réseaux sociaux). C'est le seul fichier à
   modifier pour personnaliser la carte.
-- `assets/` — votre photo (`photo.svg`, à remplacer) et votre CV
-  (`cv.pdf`, à remplacer). Des fichiers de remplacement sont fournis pour
-  que tout fonctionne immédiatement.
+- `assets/` — votre photo (`photo.jpg`) et votre CV (`cv.pdf`), déjà en
+  place.
 - `styles.css` — le style visuel des cartes.
 - `vendor/qrcode.min.js` — librairie de génération de QR code (embarquée
   localement, aucune dépendance externe/CDN requise).
 
 ## Personnaliser
 
-1. Ouvrez `config.js` et renseignez :
+Vos informations (nom, titre, bio, photo, CV, portfolio, réseaux) sont déjà
+renseignées dans `config.js`. Pour les mettre à jour :
+
+1. Ouvrez `config.js` et modifiez :
    - `name`, `title`, `bio`
-   - `photo` : remplacez `assets/photo.svg` par votre vraie photo (ex.
-     `assets/photo.jpg`) et mettez à jour le chemin
-   - `cv` : remplacez `assets/cv.pdf` par votre vrai CV (gardez le même nom
-     de fichier, ou changez `cv` et `cvFileName`)
+   - `photo` : remplacez `assets/photo.jpg` par une nouvelle photo si besoin
+   - `cv` : remplacez `assets/cv.pdf` par une nouvelle version de votre CV
+     (gardez le même nom de fichier, ou changez `cv` et `cvFileName`)
    - `portfolioUrl` : le lien vers votre portfolio en ligne
    - `cardUrl` : l'URL publique de `index.html` une fois déployé (nécessaire
-     pour générer le bon QR code dans `card-qr.html`)
+     pour générer le bon QR code dans `card-qr.html`) — **à mettre à jour
+     après déploiement**
    - `socials` : vos liens (email, LinkedIn, GitHub, etc.)
 
 ## Déployer
