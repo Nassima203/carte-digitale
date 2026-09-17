@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carte à partager (QR code)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="vendor/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="qr-page">
+    <main class="card">
+      <img class="card__photo" id="photo" src="" alt="Photo de profil" />
+      <h1 class="card__name" id="name"></h1>
+      <p class="card__title" id="title"></p>
+    </main>
+
+    <div class="qr-box" id="qrcode"></div>
+    <p class="qr-hint">
+      Scannez ce QR code pour accéder à la carte digitale : le portfolio et
+      le téléchargement du CV.
+    </p>
+  </div>
+
+  <script src="config.js"></script>
+  <script>
+    const cfg = window.CARD_CONFIG;
+
+    document.getElementById("photo").src = cfg.photo;
+    document.getElementById("name").textContent = cfg.name;
+    document.getElementById("title").textContent = cfg.title;
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: cfg.cardUrl,
+      width: 200,
+      height: 200,
+      colorDark: "#1f2033",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
+  </script>
+</body>
+</html>
