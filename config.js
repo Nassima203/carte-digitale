@@ -12,14 +12,15 @@ window.CARD_CONFIG = {
   cvFileName: "CV-Nassima-Adli.pdf",
 
   // Lien vers le portfolio (utilisé aussi par le logo en haut de page).
-  portfolioUrl: "https://portfolio-nassimaadli.vercel.app",
+  // URLs reprises telles quelles des hyperliens du CV.
+  portfolioUrl: "https://portfolio-nassimaadli.vercel.app/",
 
   // Liens affichés façon Linktree, dans l'ordre. `icon` fait référence à
   // une clé de window.CARD_ICONS (voir plus bas) ; laissez-le vide pour
   // un lien sans icône.
   links: [
-    { label: "Portfolio", href: "https://portfolio-nassimaadli.vercel.app" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/nassima-adli-60a78135b/", icon: "linkedin" },
+    { label: "Portfolio", href: "https://portfolio-nassimaadli.vercel.app/" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/nassima-adli-60a78135b", icon: "linkedin" },
     { label: "GitHub", href: "https://github.com/Nassima203", icon: "github" },
     { label: "Gmail", href: "mailto:nassimaadli777@gmail.com", icon: "gmail" }
   ]
